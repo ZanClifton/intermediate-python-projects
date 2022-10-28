@@ -13,6 +13,6 @@ SET author_id=CASE
     WHEN title='The Restaurant at the End of the Universe' THEN 3
 END;
 
-\echo "\n----- books with author_id -----"
+\echo '\n----- books with author_id -----'
 
 SELECT * FROM books;

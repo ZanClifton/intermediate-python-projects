@@ -3,6 +3,6 @@
 ALTER TABLE books
 ADD author_id INT;
 
-\echo "\n----- updated books table -----"
+\echo '\n----- updated books table -----'
 
 SELECT * FROM books;
