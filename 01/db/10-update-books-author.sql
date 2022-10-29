@@ -13,6 +13,11 @@ SET author_id=CASE
     WHEN title='The Restaurant at the End of the Universe' THEN 3
 END;
 
+ALTER TABLE books
+ADD CONSTRAINT books_author_id_fk 
+FOREIGN KEY (author_id)
+REFERENCES authors(id);
+
 \echo '\n----- books with author_id -----'
 
 SELECT * FROM books;
