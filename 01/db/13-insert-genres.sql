@@ -8,11 +8,16 @@ VALUES
     ('comedy'),
     ('dystopian'),
     ('fantasy'),
-    ('non-fiction'),
+    ('historical fiction'),
+    ('horror'),
+    ('mystery'),
+    ('nonfiction'),
+    ('paranormal'),
     ('romance'),
     ('science'),
-    ('science-fiction')
-;
+    ('science fiction'),
+    ('thriller'),
+    ('young adult');
 
 
 \echo '\n----- all genres -----'
