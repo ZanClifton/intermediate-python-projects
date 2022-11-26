@@ -8,14 +8,14 @@ VALUES
     ('comedy'),
     ('dystopian'),
     ('fantasy'),
-    ('historical fiction'),
+    ('historical-fiction'),
     ('horror'),
     ('mystery'),
     ('nonfiction'),
     ('paranormal'),
     ('romance'),
     ('science'),
-    ('science fiction'),
+    ('sci-fi'),
     ('thriller'),
     ('young adult');
 
