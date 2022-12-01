@@ -24,3 +24,37 @@ JOIN books ON books.id = reviews.book_id
 WHERE book_id = 7
 GROUP BY books.title;
 
+\echo '\n----- the most favourable review for Pride and Prejudice -----'
+
+SELECT 
+    books.title, reviews.rating, reviews.review_title, reviews.rating, reviews.review_body
+FROM reviews
+JOIN books ON books.id = reviews.book_id
+WHERE book_id = 11 AND reviews.rating = (SELECT MAX(reviews.rating) from reviews)
+GROUP BY books.title, reviews.rating, reviews.review_title, reviews.review_body;
+
+\echo '\n----- the least favourable review for Pride and Prejudice -----'
+
+SELECT 
+    books.title, reviews.rating, reviews.review_title, reviews.review_body
+FROM reviews
+JOIN books ON books.id = reviews.book_id
+WHERE book_id = 11 AND reviews.rating = (SELECT MIN(reviews.rating) from reviews)
+GROUP BY books.title, reviews.rating, reviews.review_title, reviews.review_body;
+
+\echo '\n----- not-deleted books with ratings 4 and over -----'
+
+SELECT books.id, books.title, AVG(reviews.rating) AS average_rating
+FROM reviews
+JOIN books ON books.id = reviews.book_id
+GROUP BY books.id
+HAVING AVG(reviews.rating) >= 4;
+
+\echo '\n----- not-deleted books with ratings over the average rating -----'
+
+SELECT books.id, books.title, AVG(reviews.rating) AS average_rating
+FROM reviews
+JOIN books ON books.id = reviews.book_id
+GROUP BY books.id
+HAVING AVG(reviews.rating) > (SELECT AVG(reviews.rating) FROM reviews);
+
