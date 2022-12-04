@@ -13,3 +13,32 @@ MENU_PROMPT = """
 99) Exit
 
 Enter your choice: """
+
+
+def list_available_books(connection):
+    books = database.get_available_books(connection)
+
+    for id, title, price_in_pence, quantity_in_stock, release_date, is_fiction in books:
+        print(f"{id}: {title}")
+
+
+MENU_OPTIONS = {
+    "1": list_available_books
+}
+
+
+def menu():
+    load_dotenv()
+    database_uri = os.environ["DATABASE_URI"]
+
+    connection = psycopg2.connect(database_uri)
+    database.create_tables(connection)
+
+    while (selection := input(MENU_PROMPT)) != "99":
+        try:
+            MENU_OPTIONS[selection](connection)
+        except KeyError:
+            print("Invalid input selected. Please try again.")
+
+
+menu()
