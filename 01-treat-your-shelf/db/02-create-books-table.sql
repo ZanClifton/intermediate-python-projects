@@ -1,6 +1,6 @@
 \c treat_your_shelf;
 
-CREATE TABLE books (
+CREATE TABLE IF NOT EXISTS books (
   id SERIAL PRIMARY KEY,
   title TEXT,
   price_in_pence INT,
