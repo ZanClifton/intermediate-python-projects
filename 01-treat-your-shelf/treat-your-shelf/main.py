@@ -18,7 +18,7 @@ Enter your choice: """
 def list_available_books(connection):
     books = database.get_available_books(connection)
 
-    for id, title, price_in_pence, quantity_in_stock, release_date, is_fiction in books:
+    for id, title, price_in_pence, quantity_in_stock, release_date, is_fiction, author_id in books:
         print(f"{id}: {title}")
 
 
