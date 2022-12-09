@@ -1,7 +1,7 @@
 import os
 import psycopg2
 from dotenv import load_dotenv
-from sql import INSERT_BOOKS_DATA, INSERT_AUTHORS_DATA
+import sql
 
 load_dotenv()
 
@@ -11,5 +11,9 @@ connection = psycopg2.connect(database_uri)
 
 with connection:
     with connection.cursor() as cursor:
-        cursor.execute(INSERT_BOOKS_DATA)
-        cursor.execute(INSERT_AUTHORS_DATA)
+        cursor.execute(sql.INSERT_AUTHORS_DATA)
+        cursor.execute(sql.INSERT_BOOKS_DATA)
+        cursor.execute(sql.INSERT_GENRES_DATA)
+        cursor.execute(sql.INSERT_BOOKS_GENRES_DATA)
+        cursor.execute(sql.INSERT_REVIEWERS_DATA)
+        cursor.execute(sql.INSERT_REVIEWS_DATA)
