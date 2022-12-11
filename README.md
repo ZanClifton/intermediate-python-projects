@@ -23,7 +23,7 @@ Terminal Commands:
 
 ```
 $ git clone https://github.com/ZanClifton/intermediate-python-projects.git
-$ cd basic-python-projects
+$ cd intermediate-python-projects
 ```
 
 ### ✔️ 2. USAGE
