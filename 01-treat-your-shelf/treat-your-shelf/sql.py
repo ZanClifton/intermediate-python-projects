@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS books (
 """
 
 CREATE_BOOKS_GENRES_TABLE = """
-CREATE TABLE books_genres (
+CREATE TABLE IF NOT EXISTS books_genres (
     id SERIAL PRIMARY KEY,
     book_id INTEGER REFERENCES books(id) ON DELETE CASCADE,
     genre_id INTEGER REFERENCES genres(id) ON DELETE CASCADE
@@ -29,14 +29,14 @@ CREATE TABLE books_genres (
 """
 
 CREATE_GENRES_TABLE = """
-CREATE TABLE genres (
+CREATE TABLE IF NOT EXISTS genres (
     id SERIAL PRIMARY KEY,
     genre VARCHAR(32)
 );
 """
 
 CREATE_REVIEWERS_TABLE = """
-CREATE TABLE reviewers (
+CREATE TABLE IF NOT EXISTS reviewers (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50),
     first_name VARCHAR(50),
@@ -48,7 +48,7 @@ CREATE TABLE reviewers (
 """
 
 CREATE_REVIEWS_TABLE = """
-CREATE TABLE reviews (
+CREATE TABLE IF NOT EXISTS reviews (
     id SERIAL PRIMARY KEY,
     book_id INTEGER NOT NULL,
     review_title TEXT,
