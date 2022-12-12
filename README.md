@@ -1,7 +1,5 @@
 # Intermediate Python Projects
 
-# Basic Python Projects
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?color=F79818&multiline=true&height=60&lines=Intermediate+Python+Projects;Exploring+Python+Further)](https://git.io/typing-svg)
 
 ## Replit
