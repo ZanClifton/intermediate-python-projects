@@ -13,6 +13,12 @@ screen.update()
 
 snek = Snake()
 
+screen.listen()
+screen.onkey(snek.up, "Up")
+screen.onkey(snek.down, "Down")
+screen.onkey(snek.left, "Left")
+screen.onkey(snek.right, "Right")
+
 game_is_on = True
 
 while game_is_on:
