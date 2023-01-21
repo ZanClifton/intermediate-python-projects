@@ -3,6 +3,7 @@ import time
 
 from food import Food
 from snake import Snake
+from scoreboard import ScoreBoard
 
 game_speed = 0.1
 
@@ -16,6 +17,7 @@ screen.update()
 
 snek = Snake()
 food = Food()
+sb = ScoreBoard()
 
 screen.listen()
 screen.onkey(snek.up, "Up")
@@ -33,5 +35,16 @@ while game_is_on:
 
     if snek.head.distance(food) < 15:
         food.refresh()
+        snek.extend()
+        sb.update_score()
+
+    if snek.head.xcor() > 280 or snek.head.xcor() < -300 or snek.head.ycor() > 280 or snek.head.ycor() < -280:
+        game_is_on = False
+        sb.game_over()
+
+    for segment in snek.segments[1:]:
+        if snek.head.distance(segment) < 10:
+            game_is_on = False
+            sb.game_over()
 
 screen.exitonclick()
