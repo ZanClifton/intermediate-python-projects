@@ -4,10 +4,10 @@
 
 ## Replit
 
-All these projects are hosted on Replit where you can try them out online without needing to clone the repo or install an IDE. Generally, they increase in complexity, but their running order is chronological from when they were created.
+All these projects are hosted on Replit where you can try them out online without needing to clone the repo or install an IDE. Generally, they increase in complexity, but their running order is chronological from when they were started.
 
 1. Treat Your Shelf
-2. Snake
+2. [Snek](https://replit.com/@ZanClifton/snek?v=1)
 3. Pong
 4. Turtle Crossing
 
