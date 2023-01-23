@@ -10,8 +10,8 @@ class Ball(Turtle):
         self.shape("circle")
         self.color("white")
         self.penup()
-        self.goto(0, 0)
 
     def move(self):
-        self.setheading(45)
-        self.forward(MOVE_DISTANCE)
+        new_x = self.xcor() + MOVE_DISTANCE
+        new_y = self.ycor() + MOVE_DISTANCE
+        self.goto(new_x, new_y)
