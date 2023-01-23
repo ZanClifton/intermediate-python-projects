@@ -1,5 +1,7 @@
 from turtle import Turtle
 
+MOVE_DISTANCE = 10
+
 
 class Ball(Turtle):
 
@@ -11,4 +13,5 @@ class Ball(Turtle):
         self.goto(0, 0)
 
     def move(self):
-        pass
+        self.setheading(45)
+        self.forward(MOVE_DISTANCE)
