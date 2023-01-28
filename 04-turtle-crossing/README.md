@@ -2,7 +2,9 @@
 
 <img src="https://github.com/ZanClifton/intermediate-python-projects/blob/main/images/turtle-crossing.png" width=250px align=right alt="Turtle Crossing"/>
 
-Why did the Turtle cross the road? It was programmed that way.
+"I say, I say, I say! Why did the Turtle cross the road?"
+
+"It was programmed that way."
 
 This is a Python project which attempts to recreate the Crossy Road game experience, without the fancy graphics the Turtle module just doesn't provide.
 
