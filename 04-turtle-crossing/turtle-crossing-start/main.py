@@ -9,15 +9,12 @@ screen.setup(width=600, height=600)
 screen.tracer(0)
 
 player = Player()
-
-cars = []
-
-for i in range(1):
-    car = CarManager()
-    cars.append(car)
+cm = CarManager()
+sb = Scoreboard()
 
 screen.listen()
 screen.onkey(player.move, "Up")
+
 
 count = 0
 
@@ -29,15 +26,17 @@ while game_is_on:
     count += 1
 
     if count % 8 == 0:
-        car = CarManager()
-        cars.append(car)
+        cm.create_car()
 
-    for car in cars:
-        car.move()
+    cm.move()
+
+    for car in cm.cars:
         if player.distance(car) < 15:
             game_is_on = False
 
     if player.is_at_finish_line():
         player.go_to_start()
+        cm.speed_up()
+        sb.level_up()
 
 screen.exitonclick()

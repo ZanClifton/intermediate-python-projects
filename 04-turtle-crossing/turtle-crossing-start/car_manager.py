@@ -18,7 +18,6 @@ class CarManager():
         car.color(choice(COLORS))
         car.penup()
         car.goto(300, randint(-10, 10) * 20.5)
-        self.move_speed = STARTING_MOVE_DISTANCE
         self.cars.append(car)
 
     def move(self):
