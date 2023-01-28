@@ -15,7 +15,7 @@ sb = Scoreboard()
 screen.listen()
 screen.onkey(player.move, "Up")
 
-
+spawn = 8 / sb.level
 count = 0
 
 game_is_on = True
@@ -25,7 +25,7 @@ while game_is_on:
 
     count += 1
 
-    if count % 8 == 0:
+    if count % spawn == 0:
         cm.create_car()
 
     cm.move()
