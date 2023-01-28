@@ -14,7 +14,7 @@ class CarManager(Turtle):
         self.shapesize(1, 1.8)
         self.color(choice(COLORS))
         self.penup()
-        self.goto(300, randint(-10, 10) * 20)
+        self.goto(300, randint(-10, 10) * 20.5)
 
     def move(self):
         new_x = self.xcor() - STARTING_MOVE_DISTANCE
