@@ -8,8 +8,8 @@ All these projects are hosted on Replit where you can try them out online withou
 
 1. Treat Your Shelf
 2. [Snek](https://replit.com/@ZanClifton/snek?v=1)
-3. Pong
-4. Turtle Crossing
+3. [Pong](https://replit.com/@ZanClifton/pong?v=1)
+4. [Turtle Crossing](https://replit.com/@ZanClifton/turtle-crossing?v=1)
 
 ## Creating A Local Copy
 
