@@ -36,15 +36,16 @@ while game_is_on:
     if snek.head.distance(food) < 15:
         food.refresh()
         snek.extend()
-        sb.update_score()
+        sb.increase_score()
+        sb.update_scoreboard()
 
     if snek.head.xcor() > 280 or snek.head.xcor() < -300 or snek.head.ycor() > 280 or snek.head.ycor() < -280:
-        game_is_on = False
-        sb.game_over()
+        snek.reset()
+        sb.reset()
 
     for segment in snek.segments[1:]:
         if snek.head.distance(segment) < 10:
-            game_is_on = False
-            sb.game_over()
+            snek.reset()
+            sb.reset()
 
 screen.exitonclick()
