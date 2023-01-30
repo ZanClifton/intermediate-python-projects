@@ -1,3 +1,5 @@
+letter_array = []
+
 with open("./Input/Letters/starting_letter.txt") as starting_letter:
     letter = starting_letter.read()
 
@@ -6,4 +8,6 @@ with open("./Input/Letters/starting_letter.txt") as starting_letter:
         for name in names:
             new_name = name.strip("\n")
             new_letter = letter.replace("[name]", new_name)
-            print(new_letter)
+
+            with open(f"./Output/ReadyToSend/{new_name}.txt", "w") as new_doc:
+                new_doc.write(new_letter)
