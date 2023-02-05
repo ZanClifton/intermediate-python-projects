@@ -11,6 +11,7 @@ All these projects are hosted on Replit where you can try them out online withou
 3. [Pong](https://replit.com/@ZanClifton/pong?v=1)
 4. [Turtle Crossing](https://replit.com/@ZanClifton/turtle-crossing?v=1)
 5. [Mail Merge](https://github.com/ZanClifton/intermediate-python-projects/tree/main/05-mail-merge) (There is no repl for this project)
+6. [US States](https://replit.com/@ZanClifton/us-states?v=1)
 
 ## Creating A Local Copy
 
