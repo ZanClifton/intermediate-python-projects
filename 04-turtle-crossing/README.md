@@ -12,7 +12,7 @@
 
 This is a Python project which attempts to recreate the Crossy Road game experience, without the fancy graphics the Turtle module just doesn't provide.
 
-It's part of a short series of projects ([Snek](https://github.com/ZanClifton/intermediate-python-projects/tree/main/02-snek), [Pong](https://github.com/ZanClifton/intermediate-python-projects/tree/main/03-pong) and [Turtle Crossing](https://github.com/ZanClifton/intermediate-python-projects/tree/main/04-turtle-crossing)) written with classes using the Turtle module in order to better understand how these work.
+It's part of a short series of projects ([Snek](https://github.com/ZanClifton/intermediate-python-projects/tree/main/02-snek), [Pong](https://github.com/ZanClifton/intermediate-python-projects/tree/main/03-pong), [Turtle Crossing](https://github.com/ZanClifton/intermediate-python-projects/tree/main/04-turtle-crossing) and the [US States](https://github.com/ZanClifton/intermediate-python-projects/tree/main/06-us-states) game) written with classes using the Turtle module in order to better understand how these work.
 
 There is no reverse, no left and no right. Keep moving forward by pressing the up arrow. Don't get hit by a car (alright, a square, then)! That's all there is to it. Good luck!
 
