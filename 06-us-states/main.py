@@ -16,7 +16,6 @@ pen.penup()
 data = pandas.read_csv("./resources/states.csv")
 
 states_dict = data.to_dict()
-# print(states_dict["state"])
 
 correct_guesses = 0
 
