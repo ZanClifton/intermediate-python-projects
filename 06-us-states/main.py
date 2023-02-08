@@ -26,6 +26,12 @@ while len(correct_guesses) < 50:
         title=f"{len(correct_guesses)}/50 States Correct", prompt="Name a US State: ").title()
 
     if guess == "Exit":
+        missed_states_list = [
+            state for state in states_list if state not in correct_guesses]
+
+        missed_states = {"missed states": missed_states_list}
+        data_frame = pandas.DataFrame(missed_states)
+        data_frame.to_csv("./revision/states_to_learn.csv")
         break
 
     for index in states_dict["state"]:
@@ -34,15 +40,3 @@ while len(correct_guesses) < 50:
             ypos = states_dict["y"][index]
             pen.write_state(guess, xpos, ypos)
             correct_guesses.append(guess)
-
-# compare lists and strip correctly guessed items from states_listz
-
-for guess in correct_guesses:
-    for state in states_list:
-        if state == guess:
-            states_list.remove(guess)
-
-missed_states = {"missed states": states_list}
-data_frame = pandas.DataFrame(missed_states)
-
-data_frame.to_csv("./revision/states_to_learn.csv")
