@@ -7,12 +7,20 @@ AUBURN = "#a22c29"
 EERIE_BLACK = "#191716"
 TEKHELET = "#631a86"
 
-
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
+
+def save_details():
+    site = website_input.get()
+    name = email_username_input.get()
+    pw = password_input.get()
+    with open("passwords.txt", "a") as f:
+        f.write(f"{site} | {name} | {pw}\n")
+
 # ---------------------------- UI SETUP ------------------------------- #
+
 
 window = Tk()
 window.title("BALROG Password Manager")
@@ -33,15 +41,17 @@ password = Label(text="Password", bg=PLATINUM)
 password.grid(column=0, row=3)
 
 website_input = Entry(width=42)
+website_input.focus()
 website_input.grid(column=1, row=1, columnspan=2)
 
 email_username_input = Entry(width=42)
+email_username_input.insert(0, "zan@email.com")
 email_username_input.grid(column=1, row=2, columnspan=2)
 
 password_input = Entry(width=24)
 password_input.grid(column=1, row=3)
 
-add_button = Button(text="Add", width=40)
+add_button = Button(text="Add", width=40, command=save_details)
 add_button.grid(column=1, row=4, columnspan=2)
 
 generate_password_button = Button(text="Create Password")
