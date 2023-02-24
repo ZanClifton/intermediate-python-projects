@@ -18,6 +18,8 @@ def save_details():
     pw = password_input.get()
     with open("passwords.txt", "a") as f:
         f.write(f"{site} | {name} | {pw}\n")
+    website_input.delete(0, END)
+    password_input.delete(0, END)
 
 # ---------------------------- UI SETUP ------------------------------- #
 
