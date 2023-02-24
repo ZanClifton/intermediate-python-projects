@@ -16,20 +16,20 @@ TEKHELET = "#631a86"
 
 window = Tk()
 window.title("BALROG Password Manager")
-window.config(padx=20, pady=20, bg=PLATINUM)
+window.config(padx=50, pady=50, bg=PLATINUM)
 
 canvas = Canvas(width=200, height=200, bg=PLATINUM, highlightthickness=0)
 logo = PhotoImage(file="logo2.png")
 canvas.create_image(100, 100, image=logo)
 canvas.grid(column=1, row=0)
 
-website = Label(text="Website")
+website = Label(text="Website", bg=PLATINUM)
 website.grid(column=0, row=1)
 
-email_username = Label(text="Email/Username")
+email_username = Label(text="Email/Username", bg=PLATINUM)
 email_username.grid(column=0, row=2)
 
-password = Label(text="Password")
+password = Label(text="Password", bg=PLATINUM)
 password.grid(column=0, row=3)
 
 website_input = Entry(width=42)
