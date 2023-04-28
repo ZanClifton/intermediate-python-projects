@@ -3,6 +3,7 @@ from tkinter import messagebox
 
 from random import choice, randint, shuffle
 
+import json
 import pyperclip
 
 PAYNES_GREY = "#6a6b83"
@@ -10,6 +11,7 @@ PLATINUM = "#e7e7e7"
 AUBURN = "#a22c29"
 EERIE_BLACK = "#191716"
 TEKHELET = "#631a86"
+
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -32,6 +34,7 @@ def generate_password():
     password_input.insert(0, password)
     pyperclip.copy(password)
 
+
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 
@@ -39,6 +42,12 @@ def save_details():
     site = website_input.get()
     name = email_username_input.get()
     pw = password_input.get()
+    new_data = {
+        site: {
+            "email": name,
+            "password": pw,
+        }
+    }
 
 
     if len(site) < 1 or len(pw) < 1:
@@ -48,13 +57,22 @@ def save_details():
         is_ok = messagebox.askokcancel(title=site, message=f"You entered: \nWebsite: {site}\nEmail: {name}\nPassword: {pw}\nSave?")
         
         if is_ok:
-            with open("passwords.txt", "a") as f:
-                f.write(f"{site} | {name} | {pw}\n")
-            website_input.delete(0, END)
-            password_input.delete(0, END)
+            try:
+                with open("passwords.json", "r") as file:
+                    data = json.load(file)
+            except FileNotFoundError:
+                with open("passwords.json", "w") as file:   
+                    json.dump(new_data, file, indent=4)
+            else:
+                data.update(new_data)
+                with open("passwords.json", "w") as file:
+                    json.dump(data, file, indent=4)
+            finally:
+                website_input.delete(0, END)
+                password_input.delete(0, END)
+
 
 # ---------------------------- UI SETUP ------------------------------- #
-
 
 window = Tk()
 window.title("BALROG Password Manager")
