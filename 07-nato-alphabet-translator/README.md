@@ -8,6 +8,12 @@ Here's a little translator which will take any single word and return the phonet
 
 It does not accept special characters or spaces.
 
+You will need to install the pandas module in order to use this app:
+
+```
+$ pip3 install pandas
+```
+
 You can try it on [Replit](https://replit.com/@ZanClifton/nato-alphabet-translator?v=1) directly in your browser, without installing an IDE.
 
 Instructions for creating a local copy are available in the main [README.md file](https://github.com/ZanClifton/intermediate-python-projects/blob/main/README.md).
