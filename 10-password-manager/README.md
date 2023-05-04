@@ -2,9 +2,9 @@
 
 # Balrog Password Manager
 
-Using the Tkinter module this app creates a password manager which can store your email address so that you don't have to keep inputting it when you add new sites and can generate a secure password on demand. The password is automatically copied to the clipboard for immediate use.
+Using the Tkinter module this app creates a password manager which can store your email address so that you don't have to keep inputting it when you add new sites and can generate a secure password on demand. It can also retrieve stored passwords from the (non-encrypted) json data file. The password is automatically copied to the clipboard for immediate use.
 
-To store your email address, navigate to line 82 of `main.py` and replace 'zan@email.com' with your own email address. When you run the app, you will see your email address pre-populated in the email address field.
+To store your email address, navigate to line 125 of `main.py` and replace 'zan@email.com' with your own email address. When you run the app, you will see your email address pre-populated in the email address field.
 
 To utilise this app, you will need to install the Tkinter module in addition to Pyperclip. You can do this in the command line interface.
 
