@@ -48,7 +48,7 @@ Run the script in the terminal:
 $ python3 main.py
 ```
 
-#
+##
 
 ### Python 3.8
 
