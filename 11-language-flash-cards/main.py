@@ -11,16 +11,22 @@ WORD_FONT = ("Ariel", 60, "bold")
 
 # ---------------------------- NEXT CARD ------------------------------- #
 
-words = pandas.read_csv("data/french_words.csv")
+try:
+    words = pandas.read_csv("still_to_learn.csv")
+except FileNotFoundError:
+    words = pandas.read_csv("data/french_words.csv")
+
 words_to_learn = words.to_dict(orient="records")
+selected_word = {}
+
+known_words = []
 
 
 def next_card():
-    global flip_timer, translation
+    global flip_timer, selected_word
     window.after_cancel(flip_timer)
     canvas.itemconfig(canvas_image, image=card_front)
     selected_word = choice(words_to_learn)
-    translation = selected_word["English"]
 
     canvas.itemconfig(word, text=selected_word["French"], fill="black")
     canvas.itemconfig(language, text="French", fill="black")
@@ -32,13 +38,34 @@ def next_card():
 
 
 def flip_card():
+    translation = selected_word["English"]
     canvas.itemconfig(canvas_image, image=card_back)
     canvas.itemconfig(word, text=translation, fill="white")
 
     canvas.itemconfig(language, text="English", fill="white")
 
 
-# ---------------------------- UI SETUP ------------------------------- #
+# ---------------------------- SAVE CARDS ------------------------------ #
+
+
+def save_cards_to_learn():
+    global known_words
+    known_words.append(selected_word["French"])
+
+    unknown_words = {
+        row.French: row.English
+        for (index, row) in words.iterrows()
+        if row.French not in known_words
+    }
+
+    still_to_learn = pandas.Series(unknown_words, name="English")
+    still_to_learn.index.name = "French"
+    still_to_learn.to_csv("./data/still_to_learn.csv")
+
+    next_card()
+
+
+# ----------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
 window.title("title")
@@ -74,7 +101,7 @@ yes = Button(
     highlightthickness=0,
     highlightcolor=BACKGROUND_COLOR,
     highlightbackground=BACKGROUND_COLOR,
-    command=next_card,
+    command=save_cards_to_learn,
 )
 yes.grid(column=1, row=1, padx=50)
 
