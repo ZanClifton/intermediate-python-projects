@@ -16,10 +16,23 @@ words_dict = {row.French: row.English for (index, row) in words.iterrows()}
 words_list = [row.French for (index, row) in words.iterrows()]
 
 def select_word():
+    canvas.itemconfig(canvas_image, image=card_front)
     selected_word = choice(words_list)
+    global translation
     translation = words_dict[selected_word]
 
-    canvas.itemconfig(word, text=selected_word)
+    canvas.itemconfig(word, text=selected_word, fill="black")
+    canvas.itemconfig(language, text="French", fill="black")
+
+    window.after(3000, flip_card)
+
+# --------------------------- FLIP CARDS ------------------------------ #
+
+def flip_card():
+    canvas.itemconfig(canvas_image, image=card_back)
+    canvas.itemconfig(word, text=translation, fill="white")
+    
+    canvas.itemconfig(language, text="English", fill="white")
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -29,13 +42,16 @@ window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
 card_front = PhotoImage(file="images/card_front.png")
-canvas.create_image(400, 263, image=card_front)
+card_back = PhotoImage(file="images/card_back.png")
+canvas_image = canvas.create_image(400, 263, image=card_front)
 canvas.grid(column=0, row=0, columnspan=2)
 
 language = canvas.create_text(400, 150, text="French", font=LANGUAGE_FONT)
 word = canvas.create_text(400, 263, text="word", font=WORD_FONT)
 
 select_word()
+
+
 
 # Buttons
 
