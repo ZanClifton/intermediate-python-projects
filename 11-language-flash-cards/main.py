@@ -9,30 +9,34 @@ LANGUAGE_FONT = ("Ariel", 40, "italic")
 WORD_FONT = ("Ariel", 60, "bold")
 
 
-# ------------------------- RETRIEVE WORDS ---------------------------- #
+# ---------------------------- NEXT CARD ------------------------------- #
 
 words = pandas.read_csv("data/french_words.csv")
-words_dict = {row.French: row.English for (index, row) in words.iterrows()}
-words_list = [row.French for (index, row) in words.iterrows()]
+words_to_learn = words.to_dict(orient="records")
 
-def select_word():
+
+def next_card():
+    global flip_timer, translation
+    window.after_cancel(flip_timer)
     canvas.itemconfig(canvas_image, image=card_front)
-    selected_word = choice(words_list)
-    global translation
-    translation = words_dict[selected_word]
+    selected_word = choice(words_to_learn)
+    translation = selected_word["English"]
 
-    canvas.itemconfig(word, text=selected_word, fill="black")
+    canvas.itemconfig(word, text=selected_word["French"], fill="black")
     canvas.itemconfig(language, text="French", fill="black")
 
-    window.after(3000, flip_card)
+    flip_timer = window.after(3000, flip_card)
 
-# --------------------------- FLIP CARDS ------------------------------ #
+
+# ---------------------------- FLIP CARDS ------------------------------ #
+
 
 def flip_card():
     canvas.itemconfig(canvas_image, image=card_back)
     canvas.itemconfig(word, text=translation, fill="white")
-    
+
     canvas.itemconfig(language, text="English", fill="white")
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -49,19 +53,31 @@ canvas.grid(column=0, row=0, columnspan=2)
 language = canvas.create_text(400, 150, text="French", font=LANGUAGE_FONT)
 word = canvas.create_text(400, 263, text="word", font=WORD_FONT)
 
-select_word()
-
+flip_timer = window.after(3000, flip_card)
 
 
 # Buttons
 
 no_pic = PhotoImage(file="images/wrong.png")
-no = Button(image=no_pic, highlightthickness=0, highlightcolor=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, command=select_word)
+no = Button(
+    image=no_pic,
+    highlightthickness=0,
+    highlightcolor=BACKGROUND_COLOR,
+    highlightbackground=BACKGROUND_COLOR,
+    command=next_card,
+)
 no.grid(column=0, row=1)
 
 yes_pic = PhotoImage(file="images/right.png")
-yes = Button(image=yes_pic, highlightthickness=0, highlightcolor=BACKGROUND_COLOR, highlightbackground=BACKGROUND_COLOR, command=select_word)
+yes = Button(
+    image=yes_pic,
+    highlightthickness=0,
+    highlightcolor=BACKGROUND_COLOR,
+    highlightbackground=BACKGROUND_COLOR,
+    command=next_card,
+)
 yes.grid(column=1, row=1, padx=50)
 
+next_card()
 
 window.mainloop()
