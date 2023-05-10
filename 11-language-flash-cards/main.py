@@ -68,7 +68,7 @@ def save_cards_to_learn():
 # ----------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
-window.title("title")
+window.title("Language Flash Cards")
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 
 canvas = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)

@@ -16,6 +16,7 @@ All these projects are hosted on Replit where you can try them out online withou
 8. [Miles to Km Converter](https://replit.com/@ZanClifton/miles-to-km?v=1)
 9. [Pomodoro](https://replit.com/@ZanClifton/pomodoro?v=1)
 10. [Balrog Password Manager](https://replit.com/@ZanClifton/balrog-password-manager?v=1)
+11. [Language Flash Cards](https://replit.com/@ZanClifton/language-flash-cards?v=1)
 
 ## Creating A Local Copy
 
