@@ -18,6 +18,7 @@ Most of these projects are hosted on Replit where you can try them out online wi
 10. [Balrog Password Manager](https://replit.com/@ZanClifton/balrog-password-manager?v=1)
 11. [Language Flash Cards](https://replit.com/@ZanClifton/language-flash-cards?v=1)
 12. [Monday Quotes](https://github.com/ZanClifton/intermediate-python-projects/tree/main/12-monday-quotes) (There is no repl for this project)
+13. [Birthday Wisher](https://github.com/ZanClifton/intermediate-python-projects/tree/main/13-birthday-wisher) (There is no repl for this project)
 
 ## Creating A Local Copy
 
