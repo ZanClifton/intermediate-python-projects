@@ -1,4 +1,4 @@
-<img src="https://github.com/ZanClifton/intermediate-python-projects/blob/main/images/quote-email.jpeg" width=250px align=right alt="Language Flash Cards"/>
+<img src="https://github.com/ZanClifton/intermediate-python-projects/blob/main/images/quote-email.jpeg" width=450px align=right alt="Tuesday Quote Email"/>
 
 # "Monday" Quotes
 
