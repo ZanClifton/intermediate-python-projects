@@ -19,31 +19,24 @@ day_of_the_week = {
     3: "Thursday",
     4: "Friday",
     5: "Saturday",
-    6: "Sunday"
+    6: "Sunday",
 }
 
 now = dt.datetime.now()
-# year = now.year
-# month = now.month
 today = day_of_the_week[now.weekday()]
-
-# print(f"""
-# Now: {now}
-# Year: {year}
-# Month: {month}
-# Day of the Week: {today}
-# """)
 
 quote_of_the_day = ""
 
-if today == "Monday":
-
+if today == "Tuesday":
     with open("./quotes.txt") as quote_list:
         quotes = quote_list.readlines()
         quote_of_the_day = choice(quotes)
 
     with smtplib.SMTP("smtp.gmail.com") as connection:
-        connection.starttls() # encrypts email in case it's intercepted
+        connection.starttls()  # encrypts email in case it's intercepted
         connection.login(user=my_email, password=my_secret)
-        connection.sendmail(from_addr=my_email, to_addrs=recipient_email, msg=f"Subject:{today} Inspiration!\n\n{quote_of_the_day}\n\nHave a happy {today}!\n\Zan xxx")
-        
+        connection.sendmail(
+            from_addr=my_email,
+            to_addrs=recipient_email,
+            msg=f"Subject:{today} Inspiration!\n\n{quote_of_the_day}\n\nHave a happy {today}!",
+        )

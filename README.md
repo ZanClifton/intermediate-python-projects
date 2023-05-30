@@ -4,7 +4,7 @@
 
 ## Replit
 
-All these projects are hosted on Replit where you can try them out online without needing to clone the repo or install an IDE. Generally, they increase in complexity, but their running order is chronological from when they were started.
+Most of these projects are hosted on Replit where you can try them out online without needing to clone the repo or install an IDE. Generally, they increase in complexity, but their running order is chronological from when they were started.
 
 1. Treat Your Shelf
 2. [Snek](https://replit.com/@ZanClifton/snek?v=1)
@@ -17,6 +17,7 @@ All these projects are hosted on Replit where you can try them out online withou
 9. [Pomodoro](https://replit.com/@ZanClifton/pomodoro?v=1)
 10. [Balrog Password Manager](https://replit.com/@ZanClifton/balrog-password-manager?v=1)
 11. [Language Flash Cards](https://replit.com/@ZanClifton/language-flash-cards?v=1)
+12. [Monday Quotes](https://github.com/ZanClifton/intermediate-python-projects/tree/main/12-monday-quotes) (There is no repl for this project)
 
 ## Creating A Local Copy
 
