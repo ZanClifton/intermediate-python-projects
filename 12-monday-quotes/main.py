@@ -10,8 +10,6 @@ my_email = os.getenv("EMAIL")
 my_secret = os.getenv("PASSWORD")
 recipient_email = os.getenv("RECIPIENT")
 
-message = "Hello"
-
 day_of_the_week = {
     0: "Monday",
     1: "Tuesday",
@@ -27,7 +25,7 @@ today = day_of_the_week[now.weekday()]
 
 quote_of_the_day = ""
 
-if today == "Tuesday":
+if today == "Thursday":
     with open("./quotes.txt") as quote_list:
         quotes = quote_list.readlines()
         quote_of_the_day = choice(quotes)
