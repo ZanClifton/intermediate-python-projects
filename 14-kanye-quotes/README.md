@@ -6,7 +6,7 @@ Using the Tkinter module and the [Kanye API](https://kanye.rest/) this app displ
 
 Press Kanye's face for a new one!
 
-To utilise this app, you will need to install the Tkinter module. You can do this in the command line interface.
+To utilise this app, you will need to install the Tkinter module. You will also need the Requests module. You can do this in the command line interface.
 
 **For Tkinter:**
 
@@ -19,7 +19,13 @@ $ sudo apt-get install python3-tk
 MacOS:
 
 ```
-brew install python-tk
+$ brew install python-tk
+```
+
+**For Requests:**
+
+```
+$ python -m pip install requests
 ```
 
 You can try it on [Replit](https://replit.com/@ZanClifton/kanye-quotes?v=1) directly in your browser, without installing an IDE.
