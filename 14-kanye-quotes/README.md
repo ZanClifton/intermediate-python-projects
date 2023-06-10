@@ -25,7 +25,7 @@ $ brew install python-tk
 **For Requests:**
 
 ```
-$ python -m pip install requests
+$ pip install requests
 ```
 
 You can try it on [Replit](https://replit.com/@ZanClifton/kanye-quotes?v=1) directly in your browser, without installing an IDE.
