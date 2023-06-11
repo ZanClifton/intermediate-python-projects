@@ -1,15 +1,15 @@
-
-3 Day Pollen Breakdown
+3 Day Pollen Breakdown for Birmingham, England
+    
 
 Tree Pollen:
 Today: Moderate
-Tomorrow: Moderate
+Tomorrow: Low
 Day After: Moderate
 
 Grass Pollen: 
-Today: Very High
-Tomorrow: Very High
-Day After: Very High
+Today: High
+Tomorrow: Moderate
+Day After: High
 
 Ragweed Pollen:
 Today: None
