@@ -1,4 +1,4 @@
-<img src="https://github.com/ZanClifton/intermediate-python-projects/blob/main/images/iss-notifier.png" width=500px align=right alt="ISS Notifier"/>
+<img src="https://github.com/ZanClifton/intermediate-python-projects/blob/main/images/iss-notifier.png" width=700px align=right alt="ISS Notifier"/>
 
 # ISS Notifier
 
