@@ -7,9 +7,7 @@ parameters = {
     "type": "boolean",
 }
 
-URL = f"https://opentdb.com/api.php?amount={parameters['amount']}&category={parameters['category']}&difficulty={parameters['difficulty']}&type={parameters['type']}"
-
-data = requests.get(url=URL)
+data = requests.get(url="https://opentdb.com/api.php", params=parameters)
 data.raise_for_status()
 
 question_data = data.json()["results"]
