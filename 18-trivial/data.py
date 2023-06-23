@@ -1,6 +1,15 @@
 import requests
 
-data = requests.get(url="https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=boolean")
+parameters = {
+    "amount": 10,
+    "category": 9,
+    "difficulty": "easy",
+    "type": "boolean",
+}
+
+URL = f"https://opentdb.com/api.php?amount={parameters['amount']}&category={parameters['category']}&difficulty={parameters['difficulty']}&type={parameters['type']}"
+
+data = requests.get(url=URL)
 data.raise_for_status()
 
 question_data = data.json()["results"]
