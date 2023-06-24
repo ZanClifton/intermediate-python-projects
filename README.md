@@ -21,6 +21,9 @@ Most of these projects are hosted on Replit where you can try them out online wi
 13. [Birthday Wisher](https://github.com/ZanClifton/intermediate-python-projects/tree/main/13-birthday-wisher) (There is no repl for this project)
 14. [Kanye Quotes](https://replit.com/@ZanClifton/kanye-quotes?v=1)
 15. [Pollen Scraper](https://replit.com/@ZanClifton/pollen-scraper?v=1)
+16. [Today Email](https://github.com/ZanClifton/intermediate-python-projects/tree/main/16-today-email) (There is no repl for this project)
+17. [ISS Notifier](https://github.com/ZanClifton/intermediate-python-projects/tree/main/17-iss-notifier) (There is no repl for this project)
+18. [Trivial](https://replit.com/@ZanClifton/trivial?v=1)
 
 ## Creating A Local Copy
 

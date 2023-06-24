@@ -1,5 +1,3 @@
-import re
-
 from data import question_data
 from question_model import Question
 from quiz_brain import QuizBrain
@@ -15,5 +13,3 @@ for question in question_data:
 
 quiz = QuizBrain(question_bank)
 quiz_ui = UI(quiz)
-
-quiz.final_result()
