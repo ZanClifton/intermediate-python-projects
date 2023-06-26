@@ -13,6 +13,7 @@ ONECALL_API_KEY = os.getenv("ONECALL_API_KEY")
 ONECALL_ENDPOINT = os.getenv("ONECALL_ENDPOINT")
 LATITUDE = os.getenv("LATITUDE")
 LONGITUDE = os.getenv("LONGITUDE")
+RECIPIENT_PHONE_NUMBER = os.getenv("RECIPIENT_PHONE_NUMBER")
 TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_PHONE_NO = os.getenv("TWILIO_PHONE_NO")
@@ -49,7 +50,7 @@ if will_rain:
         .create(
             body="Bring a brolly! ☔☔☔",
             from_=TWILIO_PHONE_NO,
-            to="+447468575818"
+            to=RECIPIENT_PHONE_NUMBER
         )
 
     print(message.sid)
