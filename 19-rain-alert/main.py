@@ -20,14 +20,12 @@ TWILIO_PHONE_NO = os.getenv("TWILIO_PHONE_NO")
 now = time.time()
 
 weather_parameters = {
-    # "q": "Manchester,UK",
     "appid": ONECALL_API_KEY,
     "lat": LATITUDE,
     "lon": LONGITUDE,
     "exclude": "minutely,daily,alerts"
 }
 
-# response = requests.get("https://api.openweathermap.org/data/2.5/weather", params=parameters) # current weather
 onecall_response = requests.get(ONECALL_ENDPOINT, params=weather_parameters) # forecast
 onecall_response.raise_for_status()
 json_data = onecall_response.json()
