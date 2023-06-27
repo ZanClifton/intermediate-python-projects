@@ -30,7 +30,7 @@ Within your Google account, do the following:
 - `PASSWORD=""` - Set this to the 16-digit code you generated within your Google account, e.g. "1234567890123456"
 - `RECIPIENT_EMAIL=""` - This is the address you want to receive the email at
 - `LATITUDE=""` and `LONGITUDE=""` - You will need to find the `LATITUDE` for your location and enter it here (I used [Google Maps](https://www.google.com/maps) for this)
-  - In a Google Maps coordinate pair, latitude (north-south) is listed first, followed by longitude (east-west). You can find them in the URL after
+  - In a Google Maps coordinate pair, latitude (north-south) is listed first, followed by longitude (east-west). You can find them in the URL after the `/@`
 
 Once you have updated the environment variables, run the script with the instructions available in the main [README.md file](https://github.com/ZanClifton/intermediate-python-projects#readme). You'll know if it's working after 60 seconds, as it will output information to the console.
 
